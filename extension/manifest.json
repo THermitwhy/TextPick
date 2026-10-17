@@ -1,0 +1,22 @@
+{
+  "manifest_version": 3,
+  "name": "拾字 · 本地图片 OCR",
+  "version": "0.3.0",
+  "description": "右键提取图片文字，在图片上选择、复制；中英文 OCR 完全本地运行。",
+  "minimum_chrome_version": "116",
+  "permissions": ["contextMenus", "offscreen", "storage"],
+  "host_permissions": ["<all_urls>"],
+  "background": { "service_worker": "background.js", "type": "module" },
+  "action": { "default_title": "拾字 OCR 设置", "default_popup": "options.html" },
+  "options_ui": { "page": "options.html", "open_in_tab": true },
+  "content_scripts": [{
+    "matches": ["<all_urls>"],
+    "js": ["geometry.js", "content.js"],
+    "all_frames": true,
+    "match_about_blank": true,
+    "run_at": "document_start"
+  }],
+  "content_security_policy": {
+    "extension_pages": "script-src 'self' 'wasm-unsafe-eval'; object-src 'self'; worker-src 'self'; connect-src 'self' data: blob: https: http: file:;"
+  }
+}

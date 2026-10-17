@@ -1,0 +1,19 @@
+{
+  "name": "pic-ocr",
+  "version": "0.3.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "models": "node --use-env-proxy scripts/download-models.mjs",
+    "check": "node scripts/check.mjs",
+    "test": "node --test tests/*.test.mjs"
+  },
+  "dependencies": {
+    "@paddleocr/paddleocr-js": "0.4.2",
+    "tesseract.js": "6.0.1"
+  },
+  "devDependencies": {
+    "esbuild": "0.25.12"
+  }
+}

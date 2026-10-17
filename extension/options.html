@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="zh-CN">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>拾字 · 本地 OCR</title><link rel="stylesheet" href="options.css"></head>
+<body><main>
+  <header><span class="mark">字</span><div><h1>拾字</h1><p>图片里的文字，随手可选。</p></div><span class="badge">LOCAL FIRST</span></header>
+  <section class="intro"><span class="eyebrow">01 / 本地识别</span><h2>右键一张图片，<br>把文字留在原处。</h2><p>识别在这台设备上完成。模型已打包，图片不上传 OCR 服务。</p></section>
+  <form id="settings">
+    <label for="engine">本地 OCR 引擎</label><select id="engine"><option value="paddle">PaddleOCR · PP-OCRv5 mobile</option><option value="tesseract">Tesseract.js · fast / best</option></select>
+    <p id="paddle-info" class="hint">PP-OCRv5 文字检测 + 识别，中英文混合，完全本地运行。</p>
+    <fieldset id="tesseract-settings" hidden>
+    <label for="model">Tesseract.js 模型</label><select id="model"><option value="best">tessdata_best · 精度优先（较慢）</option><option value="fast">tessdata_fast · 速度优先</option></select>
+    <label for="language">识别语言</label><select id="language"><option value="chi_sim+eng">简体中文 + English</option><option value="chi_sim">简体中文</option><option value="eng">English · 更轻量</option></select>
+    <label for="segmentation">图片版面</label><select id="segmentation"><option value="3">自动分析 · 文档 / 多段文字</option><option value="6">单个文本块 · 连续段落</option><option value="11">稀疏文字 · 截图 / 海报</option></select>
+    </fieldset>
+    <button type="submit">保存设置 <span>↗</span></button><p id="status" role="status"></p>
+  </form>
+  <section class="guide"><h3>使用方式</h3><ol><li>在普通网页或图片标签页中，右键图片。</li><li>选择「提取文字（本地 OCR）」。</li><li>拖选图片上的文字，或点击「复制全文」。</li></ol><p>安装后先刷新已有页面。Chrome 内部页面、商店及部分受保护图片无法使用；本地文件需在扩展详情中开启「允许访问文件网址」。</p></section>
+  <footer><span>PaddleOCR / Tesseract.js · WASM</span><span>v0.3 · 本地引擎</span></footer>
+</main><script src="options.js"></script></body></html>
