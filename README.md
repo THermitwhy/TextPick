@@ -3,9 +3,6 @@
 Manifest V3 扩展。在图片右键菜单中选择 **提取文字（本地 OCR）**，识别完成后，图片上会生成可选择的文字层。支持拖选后 Ctrl/Cmd+C、复制全文、文字显隐，以及查看和编辑全文。
 
 ## 直接安装
-
-本工作区已经准备好 `dist`，包含 PaddleOCR PP-OCRv5 mobile 检测/识别模型，以及 Tesseract fast、best 两套中英文模型和 WASM 运行库：
-
 1. Chrome 打开 `chrome://extensions`，开启「开发者模式」。
 2. 点击「加载已解压的扩展程序」，选择此项目的 **dist** 目录。
 3. 刷新要使用的网页，右键图片，选择「提取文字（本地 OCR）」。
