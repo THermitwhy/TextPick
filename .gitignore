@@ -1,0 +1,9 @@
+node_modules/
+dist/
+models/*.traineddata.gz
+models/*.tmp
+models/best/*.traineddata.gz
+models/best/*.tmp
+output/
+models/paddle/*.tar
+models/paddle/*.tmp
